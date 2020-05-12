@@ -1,0 +1,45 @@
+body {
+    background-image:url('http://www.vanessametonini.com.br/imersaocss/a1/img/fundo.jpg');
+    background-size: auto 100vh;
+    font-family: Arial;
+    height:100vh;
+  }
+  
+  /*tudo que estiver na classe menu vai ficar com fundo branco*/
+  .menu{
+    background-color: white;
+  }
+  
+  .menu ul{
+    display: flex;
+    justify-content: space-around;
+  }
+
+   /*abaixo mostra como fazer para todas as tags li que estão dentro de menu fiqum sem bolinha */
+  .menu li{ 
+    list-style: none;
+  }
+  
+  /*diz que todas as tags a(de link) ficarão sem underline*/
+  a{
+    color: teal;
+    text-decoration: none;
+  }
+  /*houver é uma pseudo classe do css responsável por fazer algo acontecer quando passar o mouse em cima */
+  a:hover{
+    text-decoration: underline;
+  }
+ 
+  
+  /*dessa forma abaixo podemos fazer a mesma função para duas classes*/
+  .site-subtitle,
+  .site-title{
+    
+    color: whitesmoke;
+    text-align: center;
+    
+  }
+  
+  .site-subtitle{
+    font-style: italic;
+  }
