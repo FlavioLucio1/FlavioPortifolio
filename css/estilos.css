@@ -1,13 +1,54 @@
+/*reset do css que é muito comum */
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
 body {
-    background-image:url('http://www.vanessametonini.com.br/imersaocss/a1/img/fundo.jpg');
+  
+    background-image:url('../img/fundo.jpg');
     background-size: auto 100vh;
-    font-family: Arial;
     height:100vh;
+    font-family: 'Roboto', sans-serif;
+    
+  }
+/*funciona como um if,diz que se a largura do dispositivo que estiver acessando for maior que 400 pixels ele vai fazer tudo que estiver dentro das chaves. também são chamados de breakpoint*/
+  @media(min-width: 400px){
+    body{
+      font-size: 18px;
+    }
+
+  }
+
+  @media(min-width: 600px){
+    body{
+      font-size: 25px;
+    }
+
+  }
+  header{
+
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
+
   /*tudo que estiver na classe menu vai ficar com fundo branco*/
   .menu{
     background-color: white;
+    position: fixed; /*faz com que a coisa fique fixa na tela*/
+    width: 100vw;
+    top: 0;   /*serve para fazer o menu ficar na parte de cima da tela,só funciona se você declarar um position*/
+    
+  }
+
+  .menu a{
+    
+    display:block; /*faz com que o link que antes era do tamanho das letras gere uma espécie de quadrado que pode almentar e diminuir as coisas ao redor*/
+    padding: 10px 20px;
   }
   
   .menu ul{
@@ -37,9 +78,64 @@ body {
     
     color: whitesmoke;
     text-align: center;
-    
   }
-  
+  .site-title{
+    font-size: 2.5em; /* diz que o tamanho padrao das classes font-title serão 3x o tamanho original da fonte*/
+    font-family: 'Fjalla One', sans-serif;
+  }
   .site-subtitle{
     font-style: italic;
+    font-size: 2em;
+    font-family: 'Dancing Script', cursive;
   }
+
+  .portifolio{
+    padding: 2em;
+  }
+
+  .portifolio h2{
+    font-family: 'Josefin Sans', sans-serif;
+    color: whitesmoke;
+    margin-bottom: 1em;
+    font-size: 3em;
+  }
+
+  .portifolio .grid{
+      display: grid;
+      gap: 2em;
+      /*grid-template-columns: 240px;*/
+  }
+
+  @media(min-width:550px){
+
+    .portifolio .grid{
+      grid-template-columns: 240px 240px;
+     }
+
+     
+  }
+
+  @media(min-width:860px){
+
+    .portifolio .grid{
+      grid-template-columns: repeat(3,240px); /* repeat serve para repetir o valor ,basta colocar a quantidade de repetições e o valor desejado */
+      justify-content: center;  /*centraliza tudo dentro da div grid,só pode usar essa função quando se usa display(colocamos display no .portifolio . grid acima*/
+      align-content: center;
+    }
+    .portifolio .img-portfolio{
+      width: 200px;
+       height: 120px;
+    }
+
+  }
+
+  .portifolio figure{
+    text-align: center;
+  }
+
+  .img-portfolio{
+    width: 180px;
+    height: 120px;
+    object-fit: cover;  /*mantém proporção da imagem sem distorce-la*/
+    border-radius: 10%;
+}
